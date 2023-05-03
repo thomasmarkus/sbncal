@@ -1,0 +1,1045 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <title>Wedstrijdkalender Survivalrun Bond Nederland</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="description" content="Uitslagen en tussenstanden van de survival circuits van survivalrunbond.nl" />
+	<meta name="keywords" content="survivalrunbond, uitslagen, uvp"  />
+	<meta name="author" content="SBN" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css?v20210819"
+   		integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   		crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   		crossorigin=""></script>
+   <script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js'></script>
+
+	<link type="text/css" rel="stylesheet" media="screen"  href="https://www.uvponline.nl/uvponlineU/css/SBN2styles.css?v20220529" />
+	<link type="text/css" rel="stylesheet" media="screen"  href="https://www.uvponline.nl/uvponlineU/css/balloon.css?v20210819" />
+
+	<link rel='shortcut icon' href='https://www.uvponline.nl/uvponlineU/../css/images/favicon.ico' type='image/x-icon' />
+</head>
+
+<div class="main-bg" style='font-size: 10px;'>
+
+ 
+
+<script>
+    function fun(plaats,dag) {
+    var toggle = "toggle"+plaats+dag;
+    var eventinfo = "eventinfo"+plaats+dag;
+    var moreText = document.getElementById(eventinfo);
+    var btnText = document.getElementById(toggle);
+    if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        btnText.innerHTML = plaats; 
+    } else {
+        btnText.innerHTML = plaats; 
+        moreText.style.display = "none";
+    }
+    }
+</script>
+
+<div id="agenda_title">
+    <h3> Wedstrijdkalender Survivalrun Bond Nederland </h3>
+    <h3> Seizoen 2022 - 2023 </h3>
+</div>
+
+<br/>
+    
+<div id="agenda_content">
+    <div class="large">
+        <div class="tbl-border">
+            <table class="wedstrijdagenda" cellpadding='3' cellspacing='1' width="1024">
+                <tr >
+                    <!-- Alex: replaced all th for td to equal main sbn site -->
+                    <td class='tbl2 agenda_head' align="center"><strong>Datum</strong></td>
+
+                    <td class='tbl2' width='12%'><strong>Plaats</strong></td>
+                    <td class='tbl2' colspan='5' align='center'><strong>Klassement</strong></td>
+                    <td class='tbl2' width='1%' align="center"><strong>Kwalif.</strong></td>
+                    <td class='tbl2' width='13%' align='center'><strong>Afstanden<br/>(km)</strong></td>
+                    <td class='tbl2' width='8%' align='center'><strong>min.leeftijd</strong></td>
+                    <td class='tbl2' width='22%'><strong>Organisator</strong></td>
+                    <td class='tbl2' width='7%' align="center"><strong>Inschrijflink</strong></td>
+                    <td class='tbl2' width='1%' align='center'><strong>Uitslag</strong></td>
+                </tr>
+
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">11-09-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Grootebroek</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5,5 - 8 - 13 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="https://ssv-oerbos.nl/" target='_blank'>Streker Oerbos Survivalrun</a></td>
+                    <td class ="&nbsp;"></td>
+                                        <td class="uitslaglink uitslaglink_definitief" align='center'>
+                        <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/919" target="_blank">
+                            DEFINITIEF
+                        </a>
+                    </td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">17-09-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Udenhout (za)</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5,5 en 7 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalrunudenhout.nl" target='_blank'>Stichting Survive and Feelgood</a></td>
+                    <td class ="&nbsp;"></td>
+                                        <td class="uitslaglink uitslaglink_definitief" align='center'>
+                        <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/920" target="_blank">
+                            DEFINITIEF
+                        </a>
+                    </td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">18-09-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Udenhout (zo)</td>
+                    <td class="wedstrijdagenda agendacircuit agendacircuit1" width="1%" align="center">L</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>12 en 18 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 18 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalrunudenhout.nl" target='_blank'>Stichting Survive and Feelgood</a></td>
+                    <td class ="&nbsp;"></td>
+                                        <td class="uitslaglink uitslaglink_definitief" align='center'>
+                        <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/921" target="_blank">
+                            DEFINITIEF
+                        </a>
+                    </td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">25-09-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Enschede</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5 en 7 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 6 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.rutbeeksurvivalrun.nl" target='_blank'>Stichting Rutbeeksurvival</a></td>
+                    <td class ="&nbsp;"></td>
+                                        <td class="uitslaglink uitslaglink_definitief" align='center'>
+                        <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/922" target="_blank">
+                            DEFINITIEF
+                        </a>
+                    </td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">25-09-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Ede</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>4,5 - 7 - 8 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 6 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.edesbestrun.nl/" target='_blank'>Tuxis Ede's Best Run</a></td>
+                    <td class ="&nbsp;"></td>
+                                        <td class="uitslaglink uitslaglink_definitief" align='center'>
+                        <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/923" target="_blank">
+                            DEFINITIEF
+                        </a>
+                    </td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">02-10-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Leeuwarden</td>
+                    <td class="wedstrijdagenda agendacircuit agendacircuit1" width="1%" align="center">L</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5,5 - 8 - 11 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.bikkelrun.nl" target='_blank'>Stichting Survivalrun Friesland</a></td>
+                    <td class ="&nbsp;"></td>
+                                        <td class="uitslaglink uitslaglink_definitief" align='center'>
+                        <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/924" target="_blank">
+                            DEFINITIEF
+                        </a>
+                    </td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">08-10-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Boerakker</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>4 - 9 - 14 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 6 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalrunboerakker.nl" target='_blank'>Stichting Survivalteam Boerakker</a></td>
+                    <td class ="&nbsp;"></td>
+                                        <td class="uitslaglink uitslaglink_definitief" align='center'>
+                        <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/926" target="_blank">
+                            DEFINITIEF
+                        </a>
+                    </td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">16-10-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Rotterdam</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>3 - 6 - 9 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://outdoorvalley.nl" target='_blank'>Outdoor Valley</a></td>
+                    <td class ="&nbsp;"></td>
+                                        <td class="uitslaglink uitslaglink_definitief" align='center'>
+                        <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/927" target="_blank">
+                            DEFINITIEF
+                        </a>
+                    </td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">23-10-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Neede</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>7 - 14 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 15 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalneede.nl/" target='_blank'>Stichting Survivalrun Neede</a></td>
+                    <td class ="&nbsp;"></td>
+                                        <td class="uitslaglink uitslaglink_definitief" align='center'>
+                        <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/929" target="_blank">
+                            DEFINITIEF
+                        </a>
+                    </td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">28-10-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>ALV Papendal</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>&nbsp;</td>
+                    <td class="wedstrijdagenda" align='center'>&nbsp;</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="https://www.uvponline.nl/uvponlineU/index.php" target='_blank'>SBN</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">30-10-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style='background-color: orange;'><b>AFGELAST </b>Deest</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 - 8 - 13 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.stormrun.nl" target='_blank'>Stichting Survivalrun Deest</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">06-11-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Groningen <b>ONK Koppel</b></td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>1 - 5,5 - 8 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 6 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalrungroningen.nl/" target='_blank'>Stichting Survivalrun Groningen</a></td>
+                    <td class ="&nbsp;"></td>
+                                            <td class="uitslaglink uitslaglink_voorlopig" align='center'>
+                            <a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag_rt/toonuitslag/433" target="_blank">
+                                VOORLOPIG
+                            </a>
+                        </td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">12-11-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Vollenhove</td>
+                    <td class="wedstrijdagenda agendacircuit agendacircuit1" width="1%" align="center">L</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 - 8 - 20 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalvollenhove.nl" target='_blank'>Stichting Survival Vollenhove</a></td>
+                    <td class ="inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/309" target="_blank">&gt;schrijf hier in&lt;</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">20-11-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Adegem (B) <b>BK</b></td>
+                    <td class="wedstrijdagenda agendacircuit agendacircuit1" width="1%" align="center">L</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>7 - 10 - 18 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 13 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalrun-meetjesland.be" target='_blank'>VZW Survivalrun Meetjesland</a></td>
+                    <td class ="inschrijflink  inschrijflink_closed" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/294" target="_blank">gesloten</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">11-12-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Enschede</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>6 en 9 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://campuschallenge.nl" target='_blank'>D.S.S.V. Tartaros</a></td>
+                    <td class ="inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/469" target="_blank">&gt;schrijf hier in&lt;</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">18-12-2022</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Dinxperlo <b>ONK KSR</b></td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 en 7,5 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.stichtingsurvivaldinxperlo.nl/" target='_blank'>Stichting Survival Dinxperlo</a></td>
+                    <td class ="inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/295" target="_blank">&gt;schrijf hier in&lt;</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">08-01-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Beltrum</td>
+                    <td class="wedstrijdagenda agendacircuit agendacircuit1" width="1%" align="center">L</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>6,5 - 14 - 22 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalbeltrum.nl/" target='_blank'>Stichting Survivalrun Beltrum</a></td>
+                    <td class ="inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/296" target="_blank">&gt;schrijf hier in&lt;</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">22-01-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Westerbork</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 - 9 - 11 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalrunwesterbork.nl" target='_blank'>Stichting Survivalrun Westerbork</a></td>
+                    <td class ="inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/297" target="_blank">&gt;schrijf hier in&lt;</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">04-02-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Gendringen (za)</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 en 9 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalgendringen.nl" target='_blank'>Stichting Survival Gendringen</a></td>
+                    <td class ="inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/286" target="_blank">&gt;schrijf hier in&lt;</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">05-02-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Gendringen (zo)</td>
+                    <td class="wedstrijdagenda agendacircuit agendacircuit1" width="1%" align="center">L</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>9 - 13 - 20 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 15 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalgendringen.nl" target='_blank'>Stichting Survival Gendringen</a></td>
+                    <td class ="inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/287" target="_blank">&gt;schrijf hier in&lt;</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">12-02-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Zwolle</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 en 9 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 6 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.thorrun.nl" target='_blank'>PP Thorrun</a></td>
+                    <td class ="inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/470" target="_blank">&gt;schrijf hier in&lt;</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">19-02-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Nieuwehorne</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5 - 10 - 15 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="https://www.u3run.nl/" target='_blank'>U3 Run</a></td>
+                    <td class ="inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/481" target="_blank">&gt;schrijf hier in&lt;</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">05-03-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Wesepe</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5 en 8 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalwesepe.nl" target='_blank'>Stichting Survival Wesepe</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">12-03-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Kootstertille <b>ONK MSR</b></td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 - 8 - 11 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survival-kootstertille.nl/" target='_blank'>Stichting Survival Kootstertille</a></td>
+                    <td class ="inschrijflink inschrijflink_waiting" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/276" target="_blank">Opent 20-11-2022 19:00</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">12-03-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Zelhem</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5,5 en 8,5 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.janinttouw.nl" target='_blank'>Survivalgroep Jan in t Touw</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">19-03-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Zeist</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 en 8 km </td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalrunzeist.nl/" target='_blank'>Survivalrun Fit Zeist</a></td>
+                    <td class ="inschrijflink inschrijflink_waiting" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/440" target="_blank">Opent 27-11-2022 19:00</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">02-04-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Bathmen</td>
+                    <td class="wedstrijdagenda agendacircuit agendacircuit1" width="1%" align="center">L</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>6,5 - 9,5 - 12 en 18 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.schipbeeksurvival.nl" target='_blank'>Schipbeek Survival</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">10-04-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Buren</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5 en 8 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="https://www.survivalrunburen.nl/" target='_blank'>Survivalrun Buren</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">16-04-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Elst (gld)</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 - 8 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survival-lingezegen.nl" target='_blank'>Stichting Survivalrun Lingezegen</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">23-04-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Norg</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5 en 8 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="https://www.survivalrunnorg.nl/" target='_blank'>Survivalrun Norg</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">23-04-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Utrecht</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>6 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 16 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalutrecht.nl/utrechtsurvivalrun/" target='_blank'>Stichting Utrecht Survivalrun</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">27-04-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Kollumerzwaag</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>7 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 9 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.wrotrun.nl" target='_blank'>Wrot Run</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">30-04-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Steenbergen</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>6,5 - 8,5 - 12 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalsteenbergen.nl/" target='_blank'>Survivalrun Diomedon Steenbergen</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">06-05-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Eindhoven</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5 en 7 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 16 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="https://atsurvivalchallenge.nl/" target='_blank'>All Terrain Outdoor Challenge</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">07-05-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Oldenzaal</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>8 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="https://outdoorchallengepark.nl/outdoor-challenge-run/" target='_blank'>Outdoor Challenge Park</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">14-05-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Havelte <b>ONK JSR</b></td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>4,5, 6,5 en 7,5 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.haveltersurvivalrun.nl" target='_blank'>Stichting Survivalrun Havelte</a></td>
+                    <td class ="inschrijflink inschrijflink_waiting" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/432" target="_blank">Opent 22-01-2023 19:00</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">14-05-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Nijmegen <b>NSK</b></td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5 en 8 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 15 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survifelrun.nl" target='_blank'>NSSV FEL</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">20-05-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Delft</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>6 en 9 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://survivalstrijd.nl/" target='_blank'>Stichting SurvivalStrijd Delft</a></td>
+                    <td class ="inschrijflink inschrijflink_waiting" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/461" target="_blank">Opent 28-01-2023 19:00</a></td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">03-06-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>De Knipe (za)</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivaldeknipe.nl" target='_blank'>Stichting Survival de Knipe</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">04-06-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>De Knipe (zo)</td>
+                    <td class="wedstrijdagenda agendacircuit agendacircuit1" width="1%" align="center">L</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit2" width="1%" align="center">M</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>7 - 12 - 20 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 15 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivaldeknipe.nl" target='_blank'>Stichting Survival de Knipe</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">11-06-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Dronten</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>8 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.dronterlandsurvivalrun.nl" target='_blank'>Stichting Dronterland Survivalrun</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">18-06-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Harreveld <b>ONK LSR</b></td>
+                    <td class="wedstrijdagenda agendacircuit agendacircuit1" width="1%" align="center">L</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5 - 8 - 14 - 21 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalharreveld.nl/" target='_blank'>Stichting Survival Harreveld</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl1' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">25-06-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>Loil</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td>&nbsp;</td>                    <td class="wedstrijdagenda" align='center'>5,5 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 8 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="http://www.survivalloil.nl" target='_blank'>Stichting Sportieve Activiteiten Loil</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                <tr class='tbl2' valign='middle'>
+                    <td class="wedstrijdagenda wedstrijddatum" align="center">25-06-2023</td>
+                    <td class="wedstrijdagenda wedstrijdplaats" style=''>'s-Hertogenbosch</td>
+                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit">&nbsp;</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit3" width="1%" align="center">K</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit4" width="1%" align="center">J</td>                    <td class="wedstrijdagenda agendacircuit agendacircuit5" width="1%" align="center">B</td>                    <td class="wedstrijdagenda agenda_qualify" align="center">
+                            <div>KWALIFICATIE<br/>RUN</div>
+                            <span class="agendaQualify_tooltiptext">
+                                    Deze survivalrun staat geregistreerd als een kwalificatierun. Recreatieve SBNleden (>18 jaar) kunnen bij elk 
+                                    van deze survivalruns bij het MET bandje voltooien van een aangemerkte individuele categorie kwalificatiepunten verdienen. 
+                                    Afhankelijk van de gekozen categorie zijn 1, 2 of zelfs 3 licentie kwalificatiepunten te verdienen! Een top-5 uitslag bij 
+                                    de mannen of een top-3 uitslag bij de vrouwen levert je DUBBELE punten op! 
+                                    Vanaf seizoen 2018-2019 zijn 6 punten nodig om een SBN klassementslicentie aan te kunnen vragen!<br>
+                                    Meer informatie op de SBN website via de <a href="https://survivalrunbond.nl/reglementen/" target="_new">SBN reglementen</a>.
+                            </span>
+                            </td>                    <td class="wedstrijdagenda" align='center'>5,5 en 8,5 km</td>
+                    <td class="wedstrijdagenda" align='center'>vanaf 10 jaar</td>
+                    <td class="wedstrijdagenda" id="wedstrijdlink" ><a href="https://www.u-battle-run.nl/" target='_blank'>Stichting U-Battle Run</a></td>
+                    <td>&nbsp;</td>
+                                            <td>&nbsp;</td>
+                    
+                    </tr>
+                            </table>
+            <br/>
+                <div id="agenda_qualExplain">
+                    <img class="agenda_qualify" src="../../../../images/KWAL_orange_61x17.png" /> = Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn.<br/>
+                </div>
+            <br/>
+        </div>
+
+        
+	    <table class="agenda_meetellend">
+	    	<tr>
+	    		<td colspan="2" class="agendacircuit">
+	    			<u>Aantal benodigde klassementswedstrijden voor een geldige eindklassering per klassement</u>
+	    		</td>
+	    	</tr>
+		    <tr>
+		    	<td class="agendacircuit agendacircuit1">Lange Survivalrun (LSR)</td>
+		    	<td>: Er tellen 5 van de 9 wedstrijden mee voor het eindklassement</td>
+		    </tr>
+		    <tr>
+		    	<td class="agendacircuit agendacircuit2">Middellange Survivalrun (MSR)</td>
+		    	<td>: Er tellen 6 van de 11 wedstrijden mee voor het eindklassement</td>
+		    </tr>
+		    <tr>
+		        <td class="agendacircuit agendacircuit3">Korte Survivalrun (KSR)</td>
+		    	<td>: Er tellen 7 van de 18 wedstrijden mee voor het eindklassement</td>
+		    </tr>
+		    <tr>
+		        <td class="agendacircuit agendacircuit4">Jeugd Survivalrun (JSR)</td>
+		    	<td>: Er tellen 7 van de 16 wedstrijden mee voor het eindklassement</td>
+		    </tr>
+            <tr>
+                                <td class="agendacircuit agendacircuit5">Basis Survivalrun (BSR)</td>
+                <td>: Er tellen 7 van de 15 wedstrijden mee voor het eindklassement</td>
+                            </tr>
+            <tr>
+
+        </table>
+    </div>
+
+    <div class="small">
+        <div class="tbl-border">
+            <div>
+                <div class = w100><div class = "agenda_month">September 2022</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">11</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Grootebroek','11')" id="toggleGrootebroek11" style="">Grootebroek</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoGrootebroek11" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="https://ssv-oerbos.nl/" target='_blank'>Streker Oerbos Survivalrun</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5,5 - 8 - 13 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd &nbsp;"></div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/919" target="_blank">Uitslagen</a></div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">17</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Udenhout (za)','17')" id="toggleUdenhout (za)17" style="">Udenhout (za)</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 even h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoUdenhout (za)17" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.survivalrunudenhout.nl" target='_blank'>Stichting Survive and Feelgood</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5,5 en 7 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even &nbsp;"></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/920" target="_blank">Uitslagen</a></div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">18</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Udenhout (zo)','18')" id="toggleUdenhout (zo)18" style="">Udenhout (zo)</button><div class ="w26 h50"><button aria-label="Er tellen 5 van de 9 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit1 odd h50">L</button><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 odd h50">M</button><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoUdenhout (zo)18" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalrunudenhout.nl" target='_blank'>Stichting Survive and Feelgood</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">12 en 18 km - min. leeftijd: vanaf 18 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd &nbsp;"></div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/921" target="_blank">Uitslagen</a></div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">25</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Enschede','25')" id="toggleEnschede25" style="">Enschede</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><div class="w16 even" >&nbsp;</div></div></div><div id="eventinfoEnschede25" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.rutbeeksurvivalrun.nl" target='_blank'>Stichting Rutbeeksurvival</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 en 7 km - min. leeftijd: vanaf 6 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even &nbsp;"></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/922" target="_blank">Uitslagen</a></div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">25</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Ede','25')" id="toggleEde25" style="">Ede</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 odd h50">B</button><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 odd h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoEde25" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.edesbestrun.nl/" target='_blank'>Tuxis Ede's Best Run</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">4,5 - 7 - 8 km - min. leeftijd: vanaf 6 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd &nbsp;"></div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/923" target="_blank">Uitslagen</a></div></div><div class = w100><div class = "agenda_month">Oktober 2022</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">02</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Leeuwarden','02')" id="toggleLeeuwarden02" style="">Leeuwarden</button><div class ="w26 h50"><button aria-label="Er tellen 5 van de 9 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit1 even h50">L</button><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 even h50">M</button><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 even h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 even h50">B</button><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 even h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoLeeuwarden02" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.bikkelrun.nl" target='_blank'>Stichting Survivalrun Friesland</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5,5 - 8 - 11 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even &nbsp;"></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/924" target="_blank">Uitslagen</a></div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">08</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Boerakker','08')" id="toggleBoerakker08" style="">Boerakker</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 odd h50">M</button><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 odd h50">B</button><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 odd h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoBoerakker08" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalrunboerakker.nl" target='_blank'>Stichting Survivalteam Boerakker</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">4 - 9 - 14 km - min. leeftijd: vanaf 6 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd &nbsp;"></div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/926" target="_blank">Uitslagen</a></div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">16</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Rotterdam','16')" id="toggleRotterdam16" style="">Rotterdam</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><div class="w16 even" >&nbsp;</div></div></div><div id="eventinfoRotterdam16" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://outdoorvalley.nl" target='_blank'>Outdoor Valley</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">3 - 6 - 9 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even &nbsp;"></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/927" target="_blank">Uitslagen</a></div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">23</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Neede','23')" id="toggleNeede23" style="">Neede</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 odd h50">M</button><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 odd h50">B</button><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoNeede23" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalneede.nl/" target='_blank'>Stichting Survivalrun Neede</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">7 - 14 km - min. leeftijd: vanaf 15 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd &nbsp;"></div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag/toonuitslag/929" target="_blank">Uitslagen</a></div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">28</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('ALV Papendal','28')" id="toggleALV Papendal28" style="">ALV Papendal</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><div class="w16 even" >&nbsp;</div></div></div><div id="eventinfoALV Papendal28" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="https://www.uvponline.nl/uvponlineU/index.php" target='_blank'>SBN</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">&nbsp; - min. leeftijd: &nbsp;</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">30</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Deest','30')" id="toggle<b>AFGELAST </b>Deest30" style="background-color: orange;"><b>AFGELAST </b>Deest</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoDeest30" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.stormrun.nl" target='_blank'>Stichting Survivalrun Deest</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5 - 8 - 13 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = w100><div class = "agenda_month">November 2022</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">06</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Groningen <b>ONK Koppel</b>','06')" id="toggleGroningen <b>ONK Koppel</b>06" style="">Groningen <b>ONK Koppel</b></button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoGroningen <b>ONK Koppel</b>06" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.survivalrungroningen.nl/" target='_blank'>Stichting Survivalrun Groningen</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">1 - 5,5 - 8 km - min. leeftijd: vanaf 6 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even &nbsp;"></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even"><a href="https://www.uvponline.nl/uvponlineU/index.php/uitslag_rt/toonuitslag/433" target="_blank">Voorlopige Uitslagen</a></div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_open"> <div class="day">12</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Vollenhove','12')" id="toggleVollenhove12" style="">Vollenhove</button><div class ="w26 h50"><button aria-label="Er tellen 5 van de 9 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit1 odd h50">L</button><div class="w16 agendacircuit2 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 odd h50">B</button><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 odd h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoVollenhove12" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalvollenhove.nl" target='_blank'>Stichting Survival Vollenhove</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5 - 8 - 20 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/309" target="_blank">&gt;schrijf hier in&lt;</a></div><div class = "w19 eventinfo_link odd"><a href="https://www.uvponline.nl/uvponlineU/index.php/startlijst/toon_startlijst/309" target="_blank">Starttijden</a></div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_closed"> <div class="day">20</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Adegem (B) <b>BK</b>','20')" id="toggleAdegem (B) <b>BK</b>20" style="">Adegem (B) <b>BK</b></button><div class ="w26 h50"><button aria-label="Er tellen 5 van de 9 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit1 even h50">L</button><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 even h50">M</button><div class="w16 agendacircuit3 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 even h50">B</button><div class="w16 agendacircuit4 even" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoAdegem (B) <b>BK</b>20" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.survivalrun-meetjesland.be" target='_blank'>VZW Survivalrun Meetjesland</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">7 - 10 - 18 km - min. leeftijd: vanaf 13 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even inschrijflink  inschrijflink_closed" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/294" target="_blank">gesloten</a></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = w100><div class = "agenda_month">December 2022</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_open"> <div class="day">11</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Enschede','11')" id="toggleEnschede11" style="">Enschede</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 odd h50">B</button><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoEnschede11" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://campuschallenge.nl" target='_blank'>D.S.S.V. Tartaros</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">6 en 9 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/469" target="_blank">&gt;schrijf hier in&lt;</a></div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_open"> <div class="day">18</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Dinxperlo <b>ONK KSR</b>','18')" id="toggleDinxperlo <b>ONK KSR</b>18" style="">Dinxperlo <b>ONK KSR</b></button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 even h50">K</button><div class="w16 agendacircuit5 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 even h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoDinxperlo <b>ONK KSR</b>18" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.stichtingsurvivaldinxperlo.nl/" target='_blank'>Stichting Survival Dinxperlo</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 en 7,5 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/295" target="_blank">&gt;schrijf hier in&lt;</a></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = w100><div class = "agenda_month">Januari 2023</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_open"> <div class="day">08</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Beltrum','08')" id="toggleBeltrum08" style="">Beltrum</button><div class ="w26 h50"><button aria-label="Er tellen 5 van de 9 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit1 odd h50">L</button><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoBeltrum08" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalbeltrum.nl/" target='_blank'>Stichting Survivalrun Beltrum</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">6,5 - 14 - 22 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/296" target="_blank">&gt;schrijf hier in&lt;</a></div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_open"> <div class="day">22</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Westerbork','22')" id="toggleWesterbork22" style="">Westerbork</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 even h50">M</button><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 even h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 even h50">B</button><div class="w16 agendacircuit4 even" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoWesterbork22" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.survivalrunwesterbork.nl" target='_blank'>Stichting Survivalrun Westerbork</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 - 9 - 11 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/297" target="_blank">&gt;schrijf hier in&lt;</a></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = w100><div class = "agenda_month">Februari 2023</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_open"> <div class="day">04</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Gendringen (za)','04')" id="toggleGendringen (za)04" style="">Gendringen (za)</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><div class="w16 agendacircuit5 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 odd h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoGendringen (za)04" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalgendringen.nl" target='_blank'>Stichting Survival Gendringen</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5 en 9 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/286" target="_blank">&gt;schrijf hier in&lt;</a></div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_open"> <div class="day">05</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Gendringen (zo)','05')" id="toggleGendringen (zo)05" style="">Gendringen (zo)</button><div class ="w26 h50"><button aria-label="Er tellen 5 van de 9 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit1 even h50">L</button><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 even h50">M</button><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoGendringen (zo)05" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.survivalgendringen.nl" target='_blank'>Stichting Survival Gendringen</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">9 - 13 - 20 km - min. leeftijd: vanaf 15 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/287" target="_blank">&gt;schrijf hier in&lt;</a></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_open"> <div class="day">12</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Zwolle','12')" id="toggleZwolle12" style="">Zwolle</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 odd h50">B</button><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoZwolle12" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.thorrun.nl" target='_blank'>PP Thorrun</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5 en 9 km - min. leeftijd: vanaf 6 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/470" target="_blank">&gt;schrijf hier in&lt;</a></div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_open"> <div class="day">19</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Nieuwehorne','19')" id="toggleNieuwehorne19" style="">Nieuwehorne</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 even h50">J</button><div class="w16 even" >&nbsp;</div></div></div><div id="eventinfoNieuwehorne19" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="https://www.u3run.nl/" target='_blank'>U3 Run</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 - 10 - 15 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even inschrijflink inschrijflink_open" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/481" target="_blank">&gt;schrijf hier in&lt;</a></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = w100><div class = "agenda_month">Maart 2023</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">05</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Wesepe','05')" id="toggleWesepe05" style="">Wesepe</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><div class="w16 odd" >&nbsp;</div></div></div><div id="eventinfoWesepe05" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalwesepe.nl" target='_blank'>Stichting Survival Wesepe</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5 en 8 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_waiting"> <div class="day">12</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Kootstertille <b>ONK MSR</b>','12')" id="toggleKootstertille <b>ONK MSR</b>12" style="">Kootstertille <b>ONK MSR</b></button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 even h50">M</button><div class="w16 agendacircuit3 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 even h50">B</button><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 even h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoKootstertille <b>ONK MSR</b>12" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.survival-kootstertille.nl/" target='_blank'>Stichting Survival Kootstertille</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 - 8 - 11 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even inschrijflink inschrijflink_waiting" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/276" target="_blank">Opent 20-11-2022 19:00</a></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">12</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Zelhem','12')" id="toggleZelhem12" style="">Zelhem</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><div class="w16 odd" >&nbsp;</div></div></div><div id="eventinfoZelhem12" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.janinttouw.nl" target='_blank'>Survivalgroep Jan in t Touw</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5,5 en 8,5 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_waiting"> <div class="day">19</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Zeist','19')" id="toggleZeist19" style="">Zeist</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 even h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 even h50">B</button><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 even h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoZeist19" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.survivalrunzeist.nl/" target='_blank'>Survivalrun Fit Zeist</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 en 8 km  - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even inschrijflink inschrijflink_waiting" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/440" target="_blank">Opent 27-11-2022 19:00</a></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = w100><div class = "agenda_month">April 2023</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">02</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Bathmen','02')" id="toggleBathmen02" style="">Bathmen</button><div class ="w26 h50"><button aria-label="Er tellen 5 van de 9 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit1 odd h50">L</button><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 odd h50">M</button><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoBathmen02" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.schipbeeksurvival.nl" target='_blank'>Schipbeek Survival</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">6,5 - 9,5 - 12 en 18 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">10</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Buren','10')" id="toggleBuren10" style="">Buren</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><div class="w16 even" >&nbsp;</div></div></div><div id="eventinfoBuren10" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="https://www.survivalrunburen.nl/" target='_blank'>Survivalrun Buren</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 en 8 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">16</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Elst (gld)','16')" id="toggleElst (gld)16" style="">Elst (gld)</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 odd h50">B</button><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoElst (gld)16" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survival-lingezegen.nl" target='_blank'>Stichting Survivalrun Lingezegen</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5 - 8 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">23</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Norg','23')" id="toggleNorg23" style="">Norg</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><div class="w16 even" >&nbsp;</div></div></div><div id="eventinfoNorg23" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="https://www.survivalrunnorg.nl/" target='_blank'>Survivalrun Norg</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 en 8 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">23</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Utrecht','23')" id="toggleUtrecht23" style="">Utrecht</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><div class="w16 odd" >&nbsp;</div></div></div><div id="eventinfoUtrecht23" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalutrecht.nl/utrechtsurvivalrun/" target='_blank'>Stichting Utrecht Survivalrun</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">6 km - min. leeftijd: vanaf 16 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">27</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Kollumerzwaag','27')" id="toggleKollumerzwaag27" style="">Kollumerzwaag</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><div class="w16 even" >&nbsp;</div></div></div><div id="eventinfoKollumerzwaag27" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.wrotrun.nl" target='_blank'>Wrot Run</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">7 km - min. leeftijd: vanaf 9 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">30</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Steenbergen','30')" id="toggleSteenbergen30" style="">Steenbergen</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 odd h50">M</button><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><div class="w16 agendacircuit5 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 odd h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoSteenbergen30" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalsteenbergen.nl/" target='_blank'>Survivalrun Diomedon Steenbergen</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">6,5 - 8,5 - 12 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = w100><div class = "agenda_month">Mei 2023</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">06</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Eindhoven','06')" id="toggleEindhoven06" style="">Eindhoven</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><div class="w16 even" >&nbsp;</div></div></div><div id="eventinfoEindhoven06" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="https://atsurvivalchallenge.nl/" target='_blank'>All Terrain Outdoor Challenge</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 en 7 km - min. leeftijd: vanaf 16 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">07</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Oldenzaal','07')" id="toggleOldenzaal07" style="">Oldenzaal</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoOldenzaal07" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="https://outdoorchallengepark.nl/outdoor-challenge-run/" target='_blank'>Outdoor Challenge Park</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">8 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_waiting"> <div class="day">14</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Havelte <b>ONK JSR</b>','14')" id="toggleHavelte <b>ONK JSR</b>14" style="">Havelte <b>ONK JSR</b></button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 even h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 even h50">B</button><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 even h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoHavelte <b>ONK JSR</b>14" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.haveltersurvivalrun.nl" target='_blank'>Stichting Survivalrun Havelte</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">4,5, 6,5 en 7,5 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even inschrijflink inschrijflink_waiting" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/432" target="_blank">Opent 22-01-2023 19:00</a></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">14</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Nijmegen <b>NSK</b>','14')" id="toggleNijmegen <b>NSK</b>14" style="">Nijmegen <b>NSK</b></button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><div class="w16 odd" >&nbsp;</div></div></div><div id="eventinfoNijmegen <b>NSK</b>14" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survifelrun.nl" target='_blank'>NSSV FEL</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5 en 8 km - min. leeftijd: vanaf 15 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_waiting"> <div class="day">20</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Delft','20')" id="toggleDelft20" style="">Delft</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 even h50">K</button><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoDelft20" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://survivalstrijd.nl/" target='_blank'>Stichting SurvivalStrijd Delft</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">6 en 9 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even inschrijflink inschrijflink_waiting" align="center" ><a href="https://www.uvponline.nl/uvponlineU/../uvponlineF/inschrijven/461" target="_blank">Opent 28-01-2023 19:00</a></div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = w100><div class = "agenda_month">Juni 2023</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">03</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('De Knipe (za)','03')" id="toggleDe Knipe (za)03" style="">De Knipe (za)</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 odd h50">J</button><div class="w16 odd" >&nbsp;</div></div></div><div id="eventinfoDe Knipe (za)03" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivaldeknipe.nl" target='_blank'>Stichting Survival de Knipe</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">04</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('De Knipe (zo)','04')" id="toggleDe Knipe (zo)04" style="">De Knipe (zo)</button><div class ="w26 h50"><button aria-label="Er tellen 5 van de 9 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit1 even h50">L</button><button aria-label="Er tellen 6 van de 11 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit2 even h50">M</button><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 even h50">K</button><div class="w16 agendacircuit5 even" >&nbsp;</div><div class="w16 agendacircuit4 even" >&nbsp;</div><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoDe Knipe (zo)04" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.survivaldeknipe.nl" target='_blank'>Stichting Survival de Knipe</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">7 - 12 - 20 km - min. leeftijd: vanaf 15 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">11</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Dronten','11')" id="toggleDronten11" style="">Dronten</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 odd h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 odd h50">B</button><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 odd h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 odd h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoDronten11" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.dronterlandsurvivalrun.nl" target='_blank'>Stichting Dronterland Survivalrun</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">8 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">18</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun('Harreveld <b>ONK LSR</b>','18')" id="toggleHarreveld <b>ONK LSR</b>18" style="">Harreveld <b>ONK LSR</b></button><div class ="w26 h50"><button aria-label="Er tellen 5 van de 9 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit1 even h50">L</button><div class="w16 agendacircuit2 even" >&nbsp;</div><div class="w16 agendacircuit3 even" >&nbsp;</div><div class="w16 agendacircuit5 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 even h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfoHarreveld <b>ONK LSR</b>18" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="http://www.survivalharreveld.nl/" target='_blank'>Stichting Survival Harreveld</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5 - 8 - 14 - 21 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div><div class = "w100 odd h50"><div class = "w1 odd">&nbsp;</div><div class = "w14 odd1"> <div class = "agenda_day"> <div class="day">25</div></div></div><button class = "btnrun w65a odd h50" 
+                                        onclick="fun('Loil','25')" id="toggleLoil25" style="">Loil</button><div class ="w26 h50"><div class="w16 agendacircuit1 odd" >&nbsp;</div><div class="w16 agendacircuit2 odd" >&nbsp;</div><div class="w16 agendacircuit3 odd" >&nbsp;</div><div class="w16 agendacircuit5 odd" >&nbsp;</div><div class="w16 agendacircuit4 odd" >&nbsp;</div><div class="w16 odd" >&nbsp;</div></div></div><div id="eventinfoLoil25" style="display: none;"><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd"><a href="http://www.survivalloil.nl" target='_blank'>Stichting Sportieve Activiteiten Loil</a></div><div class = "w16 org odd">&nbsp</div><div class = "w80 org odd">5,5 km - min. leeftijd: vanaf 8 jaar</div><div class = "w16 org eventinfo_link odd">&nbsp</div><div class = "w45 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div><div class = "w19 eventinfo_link odd">&nbsp</div></div><div class = "w100 even h50"><div class = "w1 even">&nbsp;</div><div class = "w14 even1"> <div class = "agenda_day"> <div class="day">25</div></div></div><button class = "btnrun w65a even h50" 
+                                        onclick="fun(''s-Hertogenbosch','25')" id="toggle's-Hertogenbosch25" style="">'s-Hertogenbosch</button><div class ="w26 h50"><div class="w16 agendacircuit1 even" >&nbsp;</div><div class="w16 agendacircuit2 even" >&nbsp;</div><button aria-label="Er tellen 7 van de 18 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit3 even h50">K</button><button aria-label="Er tellen 7 van de 15 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit5 even h50">B</button><button aria-label="Er tellen 7 van de 16 wedstrijden mee voor het eindklassement." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 agendacircuit4 even h50">J</button><button aria-label="Deze survivalrun bevat één of meer categorieën waar kwalificatiepunten voor een (volwassenen) wedstrijdlicentie te verdienen zijn." data-balloon-length="large" data-balloon-pos="up-right" 
+                                            class="btnrun w16 even h50" ><img src="https://www.uvponline.nl/uvponlineU//img/Q16.png""></button></div></div><div id="eventinfo's-Hertogenbosch25" style="display: none;"><div class = "w16 org even">&nbsp</div><div class = "w80 org even"><a href="https://www.u-battle-run.nl/" target='_blank'>Stichting U-Battle Run</a></div><div class = "w16 org even">&nbsp</div><div class = "w80 org even">5,5 en 8,5 km - min. leeftijd: vanaf 10 jaar</div><div class = "w16 org eventinfo_link even">&nbsp</div><div class = "w45 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div><div class = "w19 eventinfo_link even">&nbsp</div></div>            </div>
+            
+        </div>
+    </div>
+
+</div> <!-- einde van content -->
+
+<br/>
+<br/>

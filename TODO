@@ -1,0 +1,6 @@
+* add type wedstrijden to infoxbox (KSR, MSR, ...)
+* add filter options to pins (only show runs with a certain distance)
+* Use the inschrijfstatus as a color-indicator of elegible runs?
+* 
+* create fancy ultra-filterable table
+* crawl individual inschrijf-pagina's for more details about the run

@@ -1,0 +1,13 @@
+[tool.poetry]
+name = "SBNcal"
+version = "0.1.0"
+description = "An extended calendar for survivalrun events"
+authors = ["Thomas Markus <survival@thomasmarkus.nl>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^1.5.1"
+lxml = "^4.9.1"
+html5lib = "^1.1"
+bs4 = "^0.0.1"
+geopy = "^2.2.0"
