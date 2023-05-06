@@ -1,0 +1,9 @@
+#Copy to config.yaml and change values
+
+server:
+  host: "localhost"
+  port: 8080
+
+database:
+  user: "admin"
+  pass: "admin"
