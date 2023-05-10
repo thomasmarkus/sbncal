@@ -3,7 +3,3 @@
 server:
   host: "localhost"
   port: 8080
-
-database:
-  user: "admin"
-  pass: "admin"

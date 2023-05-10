@@ -3,44 +3,12 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io"
 	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
 	"gopkg.in/yaml.v2"
 )
-
-type Config struct {
-	Server struct {
-		Port string `yaml:"port"`
-		Host string `yaml:"host"`
-	} `yaml:"server"`
-	Database struct {
-		Username string `yaml:"user"`
-		Password string `yaml:"pass"`
-	} `yaml:"database"`
-}
-
-type Wedstrijd struct {
-	Datum         string   `json:"Datum"`
-	Plaats        string   `json:"Plaats"`
-	LSR           bool     `json:"LSR"`
-	MSR           bool     `json:"MSR"`
-	KSR           bool     `json:"KSR"`
-	Jeugd         bool     `json:"Jeugd"`
-	BSR           bool     `json:"BSR"`
-	Kwalificatie  bool     `json:"Kwalificatie"`
-	Afstanden     []string `json:"Afstanden"`
-	MinLeeftijd   string   `json:"min.leeftijd"`
-	Organisator   []string `json:"Organisator"`
-	Inschrijflink []string `json:"Inschrijflink"`
-	Uitslag       []string `json:"Uitslag"`
-	ONK           bool     `json:"ONK"`
-	Koppel        bool     `json:"Koppel"`
-	Afgelast      bool     `json:"Afgelast"`
-	Coords        []string `json:"coords"`
-}
 
 var wedstrijden []Wedstrijd
 
@@ -80,16 +48,13 @@ func setupRouter() *gin.Engine {
 
 func importWedstrijden(filename string) ([]Wedstrijd, error) {
 	var wedstrijden []Wedstrijd
-	jsonFile, err := os.Open(filename)
+	byteValue, err := os.ReadFile(filename)
 	if err != nil {
 		return wedstrijden, err
 	}
-	defer jsonFile.Close()
 
-	byteValue, _ := io.ReadAll(jsonFile)
-	json.Unmarshal(byteValue, &wedstrijden)
-
-	return wedstrijden, nil
+	err = json.Unmarshal(byteValue, &wedstrijden)
+	return wedstrijden, err
 }
 
 func decodeConfig(filename string) (Config, error) {
