@@ -24,43 +24,49 @@
         <div id="wedstrijden-table"></div>
         <script type="text/javascript">
 
-            const xhr = new XMLHttpRequest()
-            xhr.open("GET", "api/wedstrijden")
-            xhr.send()
+            fetch("api/wedstrijden")
+                .then(response => {
+                    if(response.status == 200) {
+                        return Promise.resolve(response)
+                    } else {
+                        return Promise.reject(new Error(response.statusText))
+                    }
+                })
+                .then(function(response) {
+                    return response.json()
+                })
+                .then(function (wedstrijden) {
 
-            xhr.onload = function() {
-                if(xhr.status != 200) {
-                    console.log("Fout bij het ophalen van de wedstrijden")
-                    return
-                }
+                    console.log(wedstrijden);
 
-                wedstrijden = JSON.parse(xhr.responseText)
-                console.log(wedstrijden)
 
-                //create Tabulator on DOM element with id "example-table"
-                var table = new Tabulator("#wedstrijden-table", {
-                    data: wedstrijden, //assign data to table
-                    //layout: "fitColumns", //fit columns to width of table (optional)
-                    layout:"fitData",
-                    columns: [ //Define Table Columns
-                        { title: "Plaats", field: "Plaats", headerFilter:true, width: 150 },
-                        { title: "Datum", field: "Datum", headerFilter:true, hozAlign: "left", sorter: "date" },
-                        { title: "Afstanden", field: "Afstanden", headerFilter:true },
-                        { title: "Minimale leeftijd", headerFilter:true, field: "min.leeftijd" },
-                        { title: "BSR", field: "BSR", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
-                        { title: "KSR", field: "KSR", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
-                        { title: "MSR", field: "MSR", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
-                        { title: "LSR", field: "LSR", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
-                        { title: "Kwalificatie", field: "Kwalificatie", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
-                        
-                    ],
+                    //create Tabulator on DOM element with id "example-table"
+                    var table = new Tabulator("#wedstrijden-table", {
+                        data: wedstrijden, //assign data to table
+                        //layout: "fitColumns", //fit columns to width of table (optional)
+                        layout:"fitData",
+                        columns: [ //Define Table Columns
+                            { title: "Plaats", field: "Plaats", headerFilter:true, width: 150 },
+                            { title: "Datum", field: "Datum", headerFilter:true, hozAlign: "left", sorter: "date" },
+                            { title: "Afstanden", field: "Afstanden", headerFilter:true },
+                            { title: "Minimale leeftijd", headerFilter:true, field: "min.leeftijd" },
+                            { title: "BSR", field: "BSR", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
+                            { title: "KSR", field: "KSR", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
+                            { title: "MSR", field: "MSR", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
+                            { title: "LSR", field: "LSR", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
+                            { title: "Kwalificatie", field: "Kwalificatie", headerFilter:true, formatter: 'tickCross', formatterParams: {crossElement: false} },
+                            
+                        ],
+                    })
+
+                    //trigger an alert message when the row is clicked
+                    table.on("rowClick", function (e, row) {
+                        alert("Row " + row.getData().id + " Clicked!!!!");
+                    })
+                })
+                .catch(function(error) {
+                    console.error('Request failed', error);
                 });
-
-                //trigger an alert message when the row is clicked
-                table.on("rowClick", function (e, row) {
-                    alert("Row " + row.getData().id + " Clicked!!!!");
-                });
-            }
         </script>
     </div>>
 
@@ -72,46 +78,47 @@
             var map = new Microsoft.Maps.Map(document.getElementById("myMap"), {});
             let sbnLogo = 'data:image/png;base64,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'
 
-            const xhr = new XMLHttpRequest()
-            xhr.open("GET", "api/wedstrijden")
-            xhr.send()
+            fetch("api/wedstrijden")
+                .then(response => {
+                    if(response.status == 200) {
+                        return Promise.resolve(response)
+                    } else {
+                        return Promise.reject(new Error(response.statusText))
+                    }
+                })
+                .then(response => {
+                    return response.json();
+                })
+                .then(function (wedstrijden) {
 
-            xhr.onload = function() {
-                if(xhr.status != 200) {
-                    console.log("Fout bij het ophalen van de wedstrijden")
-                    return
-                }
+                    for (wedstrijd of wedstrijden) {
+                        var location = new Microsoft.Maps.Location(wedstrijd.coords[0], wedstrijd.coords[1]);
+                        var pushpin = new Microsoft.Maps.Pushpin(location, {
+                            icon: sbnLogo,
+                            title: wedstrijd.Plaats,
+                            subTitle: wedstrijd.Datum,
+                        });
 
-                wedstrijden = JSON.parse(xhr.responseText)
+                        let infobox = new Microsoft.Maps.Infobox(location, {
+                            title: wedstrijd.Plaats + " / " + wedstrijd.Datum,
+                            description: `
+                                Type wedstrijd(en): BSR: ${wedstrijd.BSR} <br>
+                                Afstanden: ${wedstrijd.Afstanden} <br>
+                                Kwalificatie: ${wedstrijd.Kwalificatie} <br>
+                                Minimale leeftijd: ${wedstrijd['min.leeftijd']} <br>
+                                <a target="_blank", href="https://www.uvponline.nl/uvponlineF/inschrijven/469">Details</a>`,
+                            visible: false,
+                            maxHeight: 256,
+                        });
 
-                for (wedstrijd of wedstrijden) {
-                    var location = new Microsoft.Maps.Location(wedstrijd.coords[0], wedstrijd.coords[1]);
-                    var pushpin = new Microsoft.Maps.Pushpin(location, {
-                        icon: sbnLogo,
-                        title: wedstrijd.Plaats,
-                        subTitle: wedstrijd.Datum,
-                    });
+                        infobox.setMap(map);
+                        Microsoft.Maps.Events.addHandler(pushpin, 'click', function () {
+                            infobox.setOptions({ visible: true });
+                        });
 
-                    let infobox = new Microsoft.Maps.Infobox(location, {
-                        title: wedstrijd.Plaats + " / " + wedstrijd.Datum,
-                        description: `
-                            Type wedstrijd(en): BSR: ${wedstrijd.BSR} <br>
-                            Afstanden: ${wedstrijd.Afstanden} <br>
-                            Kwalificatie: ${wedstrijd.Kwalificatie} <br>
-                            Minimale leeftijd: ${wedstrijd['min.leeftijd']} <br>
-                            <a target="_blank", href="https://www.uvponline.nl/uvponlineF/inschrijven/469">Details</a>`,
-                        visible: false,
-                        maxHeight: 256,
-                    });
-
-                    infobox.setMap(map);
-                    Microsoft.Maps.Events.addHandler(pushpin, 'click', function () {
-                        infobox.setOptions({ visible: true });
-                    });
-
-                    map.entities.push(pushpin);
-                }
-            }
+                        map.entities.push(pushpin);
+                    }
+                });
         }
     </script>
     <script type="text/javascript"
